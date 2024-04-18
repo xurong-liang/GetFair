@@ -24,12 +24,12 @@ DATA = "V1" # 'V2'
 DATASET = "MHS" # "Jigsaw"
 LOAD_EMB = False
 EMB_MODEL = "gpt2" # 'roberta', 'bert'
-EMB_MODEL_PATH = 'distilgpt2' # 'distilroberta-base', './bert_uncased_L_12_H_256/pytorch_model.bin'
+EMB_MODEL_PATH = 'distilgpt2' # 'distilroberta-base'
 EMB_CONFIG_PATH = None # Optional Config file
 MAX_SEQUENCE_LENGTH = 170 # max sequence length for tokenizers
 
 # Define the various file paths for the Pre-trained GloVe vector, model output file location, and saved model paths
-TOPIC_EMBEDDINGS_PATH = ["../vocab_npa_6B_300d.npy", "../embs_npa_6B_300d.npy"]
+TOPIC_EMBEDDINGS_PATH = ["./dataset/vocab_npa_6B_300d.npy", "./dataset/embs_npa_6B_300d.npy"]
 TOPIC_EMBEDDINGS_SHAPE = 300 # Length of the word embeddings (i.e. GloVe vectors)
 
 FILENAME = f"./Training_output.txt"
@@ -92,11 +92,11 @@ FILTER_LAYER_SHAPE = [
 ]
 
 if DATA == "V1":
-    DATA_PATHS = {"train": f"../filtered_unseen_test_data/{DATASET}_filtered_train_df.csv" , \
-                "val": f"../filtered_unseen_test_data/{DATASET}_filtered_val_df.csv", \
-                    "test": f"../filtered_unseen_test_data/{DATASET}_unseen_test_df.csv"}
+    DATA_PATHS = {"train": f"./dataset/{DATASET}_filtered_train_df.csv" , \
+                "val": f"./dataset/{DATASET}_filtered_val_df.csv", \
+                    "test": f"./dataset/{DATASET}_unseen_test_df.csv"}
 else:
-    DATA_PATHS = {"train": f"../filtered_unseen_test_data/{DATASET}_filtered_train_df_v2.csv" , \
-                "val": f"../filtered_unseen_test_data/{DATASET}_filtered_val_df_v2.csv", \
-                    "test": f"../filtered_unseen_test_data/{DATASET}_unseen_test_df_v2.csv"}
+    DATA_PATHS = {"train": f"./dataset/{DATASET}_filtered_train_df_v2.csv" , \
+                "val": f"./dataset/{DATASET}_filtered_val_df_v2.csv", \
+                    "test": f"./dataset/{DATASET}_unseen_test_df_v2.csv"}
 
